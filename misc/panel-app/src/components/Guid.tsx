@@ -1,4 +1,6 @@
 class Guid {
+  private _guid: number;
+
   constructor() {
     this._guid = 0;
   }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 class Item extends Component {
 
@@ -31,7 +31,7 @@ class Item extends Component {
     this.onChange({ type: e.target.checked ? 'CSS' : 'XPATH' }, e);
   }
 
-  renderPath(withBool) {
+  renderPath(withBool:boolean) {
     let retval = [
       <input key={this.props.id + '-text'} type="text" className="wsh-rule-path" placeholder="Selector (XPath or CSS)" value={this.props.path} onChange={this.onChangePath.bind(this)} />
     ];

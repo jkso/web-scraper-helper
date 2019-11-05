@@ -4,6 +4,11 @@
 import Guid from './Guid';
 
 class Storage {
+  private specs: any;
+  private _listeners: any;
+  private _sCurrentName:string;
+  private _sCurrentSpec:string;
+
   constructor() {
     this.specs = {};
     this._listeners = {};
@@ -40,21 +45,21 @@ class Storage {
     return Object.keys(this.specs);
   }
 
-  getSpec(name) {
+  getSpec(name:string) {
     this._sCurrentName = name;
     return this.specs[name] || this.getDefault();
   }
 
-  loadSpec(name) {
+  loadSpec(name:string) {
     this._sCurrentName = name;
     this.set(this.getSpec(name), null, true);
   }
 
-  newSpec(name) {
+  newSpec(name:string) {
     this.specs[name] = this.getDefault();
   }
 
-  reload(callback) {
+  reload(callback:Function?) {
     try {
       chrome.storage.local.get(null, store => {
         let specs = {};
@@ -116,7 +121,7 @@ class Storage {
     }
   }
 
-  remove(name) {
+  remove(name:string) {
     this._sCurrentName = null;
     this._sCurrentSpec = null;
 
@@ -145,7 +150,7 @@ class Storage {
     }
   }
 
-  set(json, id, reset) {
+  set(json:any, id:string, reset:boolean) {
     try {
       if (typeof json !== 'string') {
         json = JSON.stringify(json);

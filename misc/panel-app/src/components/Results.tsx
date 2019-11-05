@@ -7,7 +7,7 @@ class Results extends Component {
   }
 
   encodeValue(value) {
-    if (value && value.length > 1) {
+    if (value && value.length > 1) {§
       return value.map(this.encodeHtml).join('\n');
     }
     return '' + (value || '-');

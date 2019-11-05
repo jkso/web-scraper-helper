@@ -1,10 +1,11 @@
-import React from 'react';
+import { Component } from 'react';
+
 import Storage from './Storage';
 import Item from './Item';
 import MetaItem from './MetaItem';
 import SpecHelper from './SpecHelper';
 
-class TextEditor extends React.Component {
+class TextEditor extends Component {
 
   constructor(props) {
     super(props);
@@ -35,7 +36,7 @@ class TextEditor extends React.Component {
   }
 }
 
-class Rules extends React.Component {
+class Rules extends Component {
   constructor(props) {
     super(props);
     this.state = {tab: 'editor'};

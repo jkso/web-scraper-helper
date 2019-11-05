@@ -1,6 +1,7 @@
 /*global chrome*/
 
-import React, { Component } from 'react';
+import { Component } from 'react';
+
 import Library from './Library';
 import Results from './Results';
 import Rules from './Rules';

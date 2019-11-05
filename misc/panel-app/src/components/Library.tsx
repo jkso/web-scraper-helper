@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
+
 import Guid from './Guid';
 import Storage from './Storage';
 
